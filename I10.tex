@@ -71,7 +71,7 @@ The senior management of large projects often comprise people who have minimal s
 
 Consequently, the processes they are familiar with don't emphasise the modifiability or structural complexity which software often has. There is nothing wrong with this per se, but it does provide a barrier that software managers have to overcome. We may compound the problem by failing to communicate in a language that our managers understand, or our ideas may be poorly formed -- we know a process is far from ideal, but aren'table to convincingly describe a process which is demonstrably better.
 
-I encountered a similar situation when I arrived at the SKA Organisation.I was the only person who had a high level mandate to think specifically about software across the system. There was a large emphasis on documentation-based earned value milestones, and in some areas of software individuals were working on documentation that they knew was irrelevant because of recent design changes. However, these documents still had to be completed to meet some earned-value milestone. In fact, whilst I never posed it in this way, I am sure if I asked somepeople where what they were doing related to the Agile Manifesto \citep{agile}, they would have concluded they were on the wrong side of each of the four manifesto value statements. This was so entrenched that you could argue we are still in this position in many areas, but I now believe there is some light at the end of the tunnel.
+I encountered a similar situation when I arrived at the SKA Organisation.I was the only person who had a high level mandate to think specifically about software across the system. There was a large emphasis on documentation-based earned value milestones, and in some areas of software individuals were working on documentation that they knew was irrelevant because of recent design changes. However, these documents still had to be completed to meet some earned-value milestone. In fact, whilst I never posed it in this way, I am sure if I asked some people where what they were doing related to the \emph{``Agile Manifesto''}~\citep{agile2001}, they would have concluded they were on the wrong side of each of the four manifesto value statements. This was so entrenched that you could argue we are still in this position in many areas, but I now believe there is some light at the end of the tunnel.
 % subsection what_is_the_problem (end)
 
 \subsection{How did we get here?} % (fold)
@@ -211,11 +211,10 @@ on them, and generate a prioritised list. You can then use this ordering to star
 about decomposing your architecture into well understood architectural patterns or 
 choosing even specific frameworks that encapsulate these patterns effectively. If a quality 
 isn't all-encompassing you might instead need to use a tactic to address a specific 
-quality attribute scenario (see Clements et al.(2001), Bass et al.(2012), Cervantes& 
-Kazman(2016)). 
+quality attribute scenario~\cite[see][]{clements2001,bass2012,cervantes2016}. 
 
 Another feature of software is that it is not amenable to a simple hierarchical decomposition. 
-There is a great paper about this by Mark Maier(Maier(2006)). System 
+There is a great paper about this by~\citet{maier2006}. System 
 engineers love breaking down a system hierarchically and assigning requirements and 
 functions to the parts. However, software doesn't work that way. It has multiple equivalent 
 hierarchies. It has layers where one product appears in all products above it in 
@@ -276,14 +275,11 @@ of large scale agile processes available including:
 	\item Scaled Agile Framework (SAFe) 
 \end{itemize}
 
-At the SKA we did some research (see, for example Hayes et al. (2016) and APM 
-(2017)) and decided to base our software processes on the Scaled Agile Framework 
-(Leffingwell, Dean et al. 2017). While the purists may argue that this isn't a fully agile 
+At the SKA we did some research~\citep[see, for example,][]{hayes2016,clarke2017} and decided to base our software processes on the Scaled Agile Framework~\citep{safe2017}. While the purists may argue that this isn't a fully agile 
 framework, it has a clear area where system engineering fits in -- because that domain 
 has contributed enormously to our ability to build large, multi-disciplinary systems. 
 System engineering is not a substitute for good architecture, it more acts as grease and 
-support structure for it, but when used in an agile context it has to adapt (Santander-Vela,
-J.2018). This choice was made relatively recently, but has largely been welcomed 
+support structure for it, but when used in an agile context it has to adapt~\citep{O4-4_adassxxvii}. This choice was made relatively recently, but has largely been welcomed 
 by the SKA community and we are actively working on developing our plans to integrate 
 it with the context of the larger construction project. 
 
