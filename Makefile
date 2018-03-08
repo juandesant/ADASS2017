@@ -10,4 +10,4 @@ all:	I10.pdf
 	latex $*
 
 clean:
-	rm -f *.bbl *.blg *.dvi *.pdf *.out *.log *.aux
+	rm -f *.bbl *.blg *.dvi I10.pdf *.out *.log *.aux *.synctex.gz
