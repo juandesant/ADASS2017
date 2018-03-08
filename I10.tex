@@ -55,7 +55,7 @@
 \paperauthor{Nick Rees}{n.rees@skatelesscope.org}{}{SKA Organization}{Computing and Software}{Macclesfield}{Cheshire}{SK11 9DL}{United Kingdom}
 
 \begin{abstract}
-The SKA is a major international project which will generate transformational science in the realm of metre and centimetre astronomy. It can be described as a ``software telescope'', with RF signals being digitized directly and generating aggregated data rates of up to ~1.7 Petabits/sec from the antennas, and intermediate data rates in the signal chain of ~5 Terabits/sec. The telescope is being designed by 10 pre-construction consortia with input from around 250 institutes world-wide and will enter the construction phase in 2019. The consortia are estimating that the computing software and hardware construction costs are both in the \euro80-90M range. 
+The SKA is a major international project which will generate transformational science in the realm of metre and centimetre astronomy. It can be described as a \emph{software telescope}, with RF signals being digitized directly and generating aggregated data rates of up to ~1.7 Petabits/sec from the antennas, and intermediate data rates in the signal chain of ~5 Terabits/sec. The telescope is being designed by 10 pre-construction consortia with input from around 250 institutes world-wide and will enter the construction phase in 2019. The consortia are estimating that the computing software and hardware construction costs are both in the \euro80-90M range. 
 
 Many of these numbers are unprecedented in astronomy and this has led to much soul searching. In 2016 the SKA Organization, which coordinates the design consortia, has used software quality, in all its forms, as a way of rationalizing key design decisions and defining primary project processes. Whilst most of this could be seen as being based on best practices elsewhere in the software industry, it has brought a number of fresh perspectives that have not been actively explored in many astronomy projects. The author will present some of these perspectives and how they, along with project risk, are seen as the primary drivers of the software processes and design.
 \end{abstract}
@@ -121,9 +121,9 @@ Definition Language Standard''} and it covers things like:
 	\end{itemize}
 \end{itemize}
 
-After some time I realised that this whilst necessary, is not sufficient. At one point I called this``tactical'' 
+After some time I realised that this whilst necessary, is not sufficient. At one point I called this \emph{tactical} 
 quality -- meaning that it reflects the day to day concerns of the developer, which is separate from a 
-``strategic'' quality, which is the quality that is perceived by the user throughout the software's operational 
+\emph{strategic} quality, which is the quality that is perceived by the user throughout the software's operational 
 lifetime. 
 
 % section first_steps (end)
@@ -133,15 +133,15 @@ lifetime.
 To understand quality, you need to know what it is. If you ask a software user they can easily describe it by the 
 inverse of some of their experiences - words such as inflexible, fragile, overly complicated, difficult to 
 understand, unpredictable and slow spring to mind. More seriously, the International Standards Organisation have 
-written a standard on it where it describes quality in terms of ``quality in use'' model and a ``product quality'' 
-model \citep[See][]{iso25010}. 
+written a standard on it where it describes quality in terms of \emph{quality in use} model and a \emph{product quality} 
+model \citep[see][]{iso25010}. 
 
 \articlefigure{QualityInUse.eps}{i10_fig1}{ISO 25010 Quality in Use model.}
 
 \articlefigure{ProductQuality.eps}{i10_fig2}{ISO 25010 Product Quality model.}
 
 Looking at these (Figure~\ref{i10_fig1} and Figure~\ref{i10_fig2}) it becomes immediately clear that many these 
-qualities are a class of requirements that are often called ``non-functional''. This means that they often avoided 
+qualities are a class of requirements that are often called \emph{non-functional}. This means that they often avoided 
 because they are too difficult -- they are difficult 
 to measure, and they are difficult to isolate as independent quantities. We have found 
 that traditional system engineering struggles with these holistic, almost aspirational, 
@@ -151,16 +151,16 @@ However, they are important, and if you Google them in the context of software
 development you come across statements like:
 
 \begin{itemize}
-	\item ``Design for maintainability from the outset.''
-	\item ``Software has to be designed from the ground up to be secure.''
-	\item ``Reliability engineering is weaved into the total development cycle.''
+	\item \emph{Design for maintainability from the outset.}
+	\item \emph{Software has to be designed from the ground up to be secure.}
+	\item \emph{Reliability engineering is weaved into the total development cycle.}
 \end{itemize}
 
 After considering this it becomes clear that quality is fundamentally related to 
 the architecture of your software system. In understanding thisI am indebted to Peter 
 Braam, the original architect of the Lustre file system that manyof us have used, and 
 who now occasionally hangs out with the SKA Science Data Processing consortium. 
-Peter pointed me to the ``Views and Beyond'' software architecture approach developed 
+Peter pointed me to the \emph{``Views and Beyond''} software architecture approach developed 
 bythe Software Engineering Institute (SEI) at Carnegie Mellon University~\citep{VandB}. This highlights the importance of qualities and we have since developed all our 
 software architecture using this approach. 
 
@@ -195,7 +195,7 @@ within1minute (i.e. usability).
 	\item The system is returned to normal service after a server failure within 1 minute 
 (i.e. reliability). 
 	\item A single failure of a core network component has no discernable effect (i.e. reliability). 
-	\item A developer wants to know if she has ``broken the build'' within 30 minutes of 
+	\item A developer wants to know if she has \emph{broken the build} within 30 minutes of 
 commit (i.e. testability).
 	\item A developer wants to roll out a modified component to the live system, test it 
 and the then revert back to the previous version. Rollout and reversion should be 
@@ -239,18 +239,18 @@ processes, you can't consistently produce good software. This also harks back to
 problem I mentioned at the beginning of this proceeding where we seem to be caught in this 
 1990's process bubble. For example, the SKA has been constrained by an early decision 
 to define the pre-construction work breakdown structure. This was done for good reasons,
-but I keep coming back to Conways Law: ``organizations which design systems \hellip 
+but I keep coming back to Conways Law: \emph{``organizations which design systems \hellip 
 are constrained to produce designs which are copies of the communication structures 
-of these organizations''~\citep{conway1968}. Lots of people know about this, and it was 
-popularised by Fred Brooks in the ``Mythical Man Month''~\citep{brooks1995}. Conway also 
+of these organizations''}~\citep{conway1968}. Lots of people know about this, and it was 
+popularised by Fred Brooks in the \emph{``Mythical Man Month''}~\citep{brooks1995}. Conway also 
 points out that if the organisation is formed to create the system then the organization 
 chart will reflect the first system design, which is almost certainly not the right one. 
 This is exactly what happened at the SKA.
 
 However, the most interesting thing I think about Conway's paper is not the law, 
-but his conclusion, two paragraphs later: ``Ways must be found to reward design managers for keeping 
+but his conclusion, two paragraphs later: \emph{``Ways must be found to reward design managers for keeping 
 their organizations lean and flexible. There is need for a philosophy 
-of system design management which is not based on the assumption that adding manpower [sic] simply adds to productivity.''
+of system design management which is not based on the assumption that adding manpower [sic] simply adds to productivity.''}
 This is they key to good processes. 
 
 The quality of your processes should also be matched to the qualities of the system 
